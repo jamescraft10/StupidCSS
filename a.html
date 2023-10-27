@@ -96,7 +96,7 @@
         #about {
             position: absolute;
             color: white;
-            font-size: large;
+            font-size: x-large;
             bottom: -225%;
             margin-left: 50%;
             transform: translate(-50%, 0%);
@@ -110,18 +110,53 @@
             margin-left: 50%;
             transform: translate(-50%, 0%);
         }
+
+        .Back {
+            position: absolute;
+            border: #000000 solid 5px;
+            border-radius: 10px;
+            width: 90px;
+            height: 50px;
+            cursor: pointer;
+            background-color: #13be8e;
+            margin-left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        .Back:hover {
+            animation-name: Box;
+            animation-duration: 150ms;
+            animation-delay: 20ms;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+
+            cursor: pointer;
+        }
+
+        #Top {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+        }
     </style>
 </head>
 <body>
     <div class="BoxContainer">
-        <div class="Box" onclick="GotoName()"><div class="BoxText" onclick="GotoName()">Name</div></div>
+        <div id="Top"></div>
+        <div class="Box" onclick="GotoName()"><div class="BoxText" onclick="GotoName()">Name</a></div></div>
         <div class="Box" onclick="GotoAbout()"><div class="BoxText" onclick="GotoAbout()">About</div></div>
         <div class="Box" onclick="GotoSkills()"><div class="BoxText" onclick="GotoSkills()">Skills</div></div>
     </div>
-    <div id="name">James</div>
-    <div id="about">I am a full stack website devloper.</div>
-    <div id="skills">HTML, CSS, JS, C++, C, Node.js, Express.js, Socket.io</div>
+    <div id="name">James<div class="Back" onclick="GotoTop()">Top</div></div>
+    <div id="about">I am a full stack website devloper.<div class="Back" onclick="GotoTop()">Top</div></div>
+    <div id="skills">HTML, CSS, JS, C++, C, Node.js, Express.js, Socket.io<div class="Back" onclick="GotoTop()">Top</div></div>
     <script>
+        function GotoTop() {
+            window.scrollTo({
+                    top: document.getElementById('Top').offsetTop - 100,
+                    behavior: 'smooth'
+            });
+        }
         function GotoName() {
             window.scrollTo({
                     top: document.getElementById('name').offsetTop - 100,
