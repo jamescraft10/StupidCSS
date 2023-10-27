@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random CSS</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            overflow: hidden;
+            width: 100%;
+            height: 500%;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Verdana, sans-serif;
+            background-color: #03261c;
+        }
+
+        .BoxContainer {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            justify-content: center;
+            align-items: flex-start;
+
+            gap: 15px;
+
+            width: 100%;
+            height: 100%;
+        }
+
+        .Box {
+            margin-top: 175px;
+
+            width: 250px;
+            height: 100px;
+            background-color: #13be8e;
+
+            border: 5px solid #000000;
+            border-radius: 10px;
+
+            text-align: left;
+
+            text-shadow: 0px 0px 0px white;
+        }
+
+        .Box:hover {
+            animation-name: Box;
+            animation-duration: 150ms;
+            animation-delay: 20ms;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+
+            cursor: pointer;
+        }
+
+        @keyframes Box {
+            from {
+                background-color: #13be8e;
+                text-shadow: 0px 0px 0px white;
+                
+            }
+            to {
+                background-color: #0f9871;
+                text-shadow: 0px 0px 10px white;
+            }
+        }
+
+        .BoxText {
+            color: white;
+            margin-left: 8px;
+            margin-top: 25px;
+            font-size: x-large;
+            cursor: default;
+        }
+
+        .BoxText:hover {
+            cursor: pointer;
+        }
+
+        #name {
+            position: absolute;
+            color: white;
+            font-size: xx-large;
+            bottom: -75%;
+            margin-left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        #about {
+            position: absolute;
+            color: white;
+            font-size: large;
+            bottom: -225%;
+            margin-left: 50%;
+            transform: translate(-50%, 0%);
+        }
+
+        #skills {
+            position: absolute;
+            color: white;
+            font-size: x-large;
+            bottom: -325%;
+            margin-left: 50%;
+            transform: translate(-50%, 0%);
+        }
+    </style>
+</head>
+<body>
+    <div class="BoxContainer">
+        <div class="Box" onclick="GotoName()"><div class="BoxText" onclick="GotoName()">Name</div></div>
+        <div class="Box" onclick="GotoAbout()"><div class="BoxText" onclick="GotoAbout()">About</div></div>
+        <div class="Box" onclick="GotoSkills()"><div class="BoxText" onclick="GotoSkills()">Skills</div></div>
+    </div>
+    <div id="name">James</div>
+    <div id="about">I am a full stack website devloper.</div>
+    <div id="skills">HTML, CSS, JS, C++, C, Node.js, Express.js, Socket.io</div>
+    <script>
+        function GotoName() {
+            window.scrollTo({
+                    top: document.getElementById('name').offsetTop - 100,
+                    behavior: 'smooth'
+            });
+        }
+        function GotoAbout() {
+            window.scrollTo({
+                    top: document.getElementById('about').offsetTop - 100,
+                    behavior: 'smooth'
+            });
+        }
+        function GotoSkills() {
+            window.scrollTo({
+                    top: document.getElementById('skills').offsetTop - 100,
+                    behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
