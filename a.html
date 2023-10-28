@@ -7,7 +7,6 @@
     <style>
         html {
             scroll-behavior: smooth;
-            overflow: hidden;
             width: 100%;
             height: 500%;
         }
@@ -147,9 +146,9 @@
         <div class="Box" onclick="GotoAbout()"><div class="BoxText" onclick="GotoAbout()">About</div></div>
         <div class="Box" onclick="GotoSkills()"><div class="BoxText" onclick="GotoSkills()">Skills</div></div>
     </div>
-    <div id="name">James<div class="Back" onclick="GotoTop()">Top</div></div>
-    <div id="about">I am a full stack website devloper.<div class="Back" onclick="GotoTop()">Top</div></div>
-    <div id="skills">HTML, CSS, JS, C++, C, Node.js, Express.js, Socket.io<div class="Back" onclick="GotoTop()">Top</div></div>
+    <div id="name">   <h2>Name:</h2>   <br><div style="font-size: 40px;">James</div><div class="Back" onclick="GotoTop()">Top</div></div>
+    <div id="about">   <h2>About:</h2>   <br><div style="font-size: 40px;">I am a full stack website devloper.</div><div class="Back" onclick="GotoTop()">Top</div></div>
+    <div id="skills">   <h2>Skills:</h2>   <br><div style="font-size: 40px;">HTML, CSS, JS, C++, C, Node.js, Express.js, Socket.io</div><div class="Back" onclick="GotoTop()">Top</div></div>
     <script>
         function GotoTop() {
             window.scrollTo({
