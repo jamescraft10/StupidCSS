@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+
+            background-color: #151513;
+            color: #E8E8E8;
+            font-family: Poppins, sans-serif;
+        }
+
+        #Text {
+            position: absolute;
+            font-size: calc(100vw / 20);
+            left: 5%;
+            top: 7%;
+        }
+
+        #coloredText {
+            background: linear-gradient(120deg, #0038FF, #B800D6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #emptyText {
+            font-style: italic;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #fef9ec;
+            color: transparent;
+        }
+
+        #rect1 {
+            position: absolute;
+            background-color: #253CBB;
+            width: calc(100vw / 6);
+            height: calc(100vw / 6);
+            border-radius: 10%;
+            right: 10%;
+            top: 5%;
+        }
+    </style>
+</head>
+<body>
+    <div id="Text">
+        <span id="coloredText">Lorem</span> ipsum dolor <span id="emptyText">sit</span> amet
+    </div>
+    <div id="rect1"></div>
+</body>
+</html>
