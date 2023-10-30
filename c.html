@@ -48,9 +48,25 @@
             background-color: #253CBB;
             width: calc(100vw / 6);
             height: calc(100vw / 6);
-            border-radius: 10%;
+            border-radius: 5% 5% 5% 15%;
             right: 10%;
             top: 5%;
+        }
+
+        #Text2 {
+            position: absolute;
+            font-size: calc(100vw / 75);
+            left: 17%;
+            top: 8%;
+        }
+
+        #image {
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            border-radius: 10%;
+            left: 20%;
+            top: 20%;
         }
     </style>
 </head>
@@ -58,6 +74,9 @@
     <div id="Text">
         <span id="coloredText">Lorem</span> ipsum dolor <span id="emptyText">sit</span> amet
     </div>
-    <div id="rect1"></div>
+    <div id="rect1">
+        <span id="Text2">Lorem ipsum dolor</span>
+        <img src="image.jpg" id="image">
+    </div>
 </body>
 </html>
