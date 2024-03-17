@@ -1,7 +1,8 @@
 let currentTextIndex = 0;
+let isBlinkerWhite = false;
 
 let textAnimation = async function() {
-    let texts = ["World", "Universe", "Galaxy", "Earth", "Mars"];
+    let texts = ["Friends", "Chat", "People"];
     let textHTML = document.getElementById('textChange');
     
     let lastText = texts[currentTextIndex];
@@ -28,6 +29,17 @@ let textAnimation = async function() {
 
     currentTextIndex += 1;
     if(currentTextIndex >= texts.length-1) { currentTextIndex = -1; }
+}
+
+let blinker = function() {
+    let blinkerHTML = document.getElementById('blinker');
+    if(isBlinkerWhite) {
+        blinkerHTML.style.color = "white";
+        isBlinkerWhite = false;
+    } else if(!isBlinkerWhite) {
+        blinkerHTML.style.color = "black";
+        isBlinkerWhite = true;
+    }
 }
 
 let textAnimationLoop = async function() {
