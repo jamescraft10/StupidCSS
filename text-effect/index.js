@@ -8,23 +8,17 @@ let textAnimation = async function() {
     let lastText = texts[currentTextIndex];
     let newText = texts[currentTextIndex+1];
     let currentText;
-    let textStart = '';
     
     // If its looping
     if(lastText == undefined) {
         lastText = texts[texts.length-1];
     }
 
-    console.log(lastText);
-    console.log(newText);
-    console.log(Math.max(newText.length, lastText.length));
-
     for(let i = 0; i < Math.max(newText.length, lastText.length); ++i) {
         await new Promise(r => setTimeout(r, 100)); // Wait 100ms
 
         currentText = newText.slice(0,i+1) + lastText.slice(i+1, Math.max(lastText.length,newText.length));
         textHTML.innerText = currentText;
-        console.log(currentText);
     }
 
     currentTextIndex += 1;

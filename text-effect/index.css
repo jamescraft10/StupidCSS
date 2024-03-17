@@ -25,7 +25,7 @@ html, body {
 #MainText {
     margin-left: 10%;
     margin-top: 6%;
-    width: 38%;
+    width: 50%;
     height: 50%;
 }
 
@@ -35,6 +35,7 @@ html, body {
 
 #textChange {
     background: -webkit-linear-gradient(45deg, #0b00e4, #00ff95 80%);
+    width: fit-content;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -44,4 +45,37 @@ html, body {
     font-size: large;
     font-weight: 500;
     color: rgb(48, 48, 48);
+}
+
+#GithubText {
+    text-decoration: none;
+    font-size: large;
+}
+
+@media only screen and (max-width: 1000px) {
+    #MainText {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #MainText {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    html, body {
+        font-size: x-large;
+    }
+
+    .Subtext {
+        font-size: medium;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #MainText {
+        width: 90%;
+    }
 }
