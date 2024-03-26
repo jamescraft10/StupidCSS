@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            min-height: 100vh;
+            min-height: 100svh;
+            display: grid;
+            place-items: center;
+            overflow: hidden;
+
+            background-color: #030303;
+            color: white;
+        }
+
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            z-index: 1000;
+
+            font-size: 15em;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 700; /* 100-900 */
+            font-style: normal;
+            font-variation-settings: "slnt" 0;
+            line-height: 1;
+        }
+
+        .blob {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+
+            top: 15%;
+            left: 25%;
+            transform: translate(-25%, 0%);
+
+            z-index: 0;
+        }
+
+        .glass {
+            width: 100vw;
+            height: 100vh;
+            z-index: 2;
+
+            backdrop-filter: blur(40px);
+        }
+    </style>
+</head>
+<body>
+    <div class="title">idk</div>
+    <div class="glass"></div>
+
+    <svg width="600" height="600" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" class="blob">
+        <defs>
+            <linearGradient id="blobColor" x1="487" y1="10" x2="88" y2="465" gradientUnits="userSpaceOnUse">        
+                <stop xmlns="http://www.w3.org/2000/svg" stop-color="#00FF47"/>
+                <stop xmlns="http://www.w3.org/2000/svg" offset="0.309014" stop-color="#5614C2"/>
+                <stop xmlns="http://www.w3.org/2000/svg" offset="0.362227" stop-color="#5021C7"/>
+                <stop xmlns="http://www.w3.org/2000/svg" offset="1" stop-color="#00C2FF"/>
+            </linearGradient>
+        </defs>
+        <g style="mix-blend-mode:plus-darker">
+            <path
+                d="M275.642 11.2609C439.832 -30.4776 722.853 21.1264 541.418 561.45C523.699 590.541 453.535 631.267 314.623 561.45C140.983 474.179 275.642 386.907 59.4787 333.786C-113.452 291.288 131.533 101.062 275.642 11.2609Z"
+                fill="url(#blobColor)"
+            />
+        </g>
+    </svg>
+</body>
+</html>
