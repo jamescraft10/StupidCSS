@@ -103,13 +103,13 @@
         .background2 {
             position: absolute;
             z-index: 4;
-            top: 110%;
+            top: 130%;
             width: 100vw;
         }
 
         .cards {
             position: absolute;
-            top: 125%;
+            top: 140%;
             z-index: 12;
 
             width: 100%;
@@ -119,6 +119,16 @@
             align-items: center;
             justify-content: center;
             gap: 2em;
+        }
+
+        @media only screen and (max-width: 1920px) {
+            .background2 {
+                top: 110%;
+            }
+
+            .cards {
+                top: 125%;
+            }
         }
 
         .card {
@@ -140,6 +150,7 @@
 
             height: 100%;
             width: 100%;
+            user-select: none;
         }
 
         .cardTitle {
