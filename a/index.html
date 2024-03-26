@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html, body {
+            z-index: -51000;
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+
+            color: white;
+            background-color: #1a1a1a;
+        }
+
+        .backgroundGlass {
+            position: absolute;
+            width: 100vw;
+            height: 100vh;
+            z-index: 5;
+
+            backdrop-filter: blur(5px);
+        }
+
+        .noise {
+            position: absolute;
+            opacity: 0.03;
+            z-index: 6;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .backgroundShape {
+            position: absolute;
+            user-select: none;
+            width: 40vw;
+        }
+
+        #backgroundShape1 {
+            z-index: 4;
+            left: -15%;
+            top: -20%;
+        }
+
+        #backgroundShape2 {
+            z-index: 3;
+            left: -11.5%;
+            top: -6.5%;
+        }
+
+        #backgroundShape3 {
+            z-index: 2;
+            left: -8%;
+            top: 7.5%;
+        }
+
+        #backgroundShape4 {
+            z-index: 1;
+            left: -4.5%;
+            top: 21.5%;
+        }
+
+        #title {
+            position: relative;
+            z-index: 10;
+
+            font-size: 5em;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 900; /* 100-900 */
+            font-style: normal;
+            font-variation-settings: "slnt" 0;
+            line-height: 1.5em;
+            letter-spacing: -0.03em;
+
+            text-align: center;
+            margin-top: 20%;
+            transform: translate(0%, -20%);
+        }
+
+        #subTitle {
+            position: relative;
+            z-index: 10;
+
+            font-size: 2em;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 600; /* 100-900 */
+            font-style: normal;
+            font-variation-settings: "slnt" 0;
+            line-height: 1.25em;
+            letter-spacing: -0.03em;
+
+            text-align: center;
+            margin-top: -1%;
+        }
+    </style>
+</head>
+<body>
+    <img src="Vector 1.svg" class="backgroundShape" id="backgroundShape1">
+    <img src="Vector 2.svg" class="backgroundShape" id="backgroundShape2">
+    <img src="Vector 3.svg" class="backgroundShape" id="backgroundShape3">
+    <img src="Vector 4.svg" class="backgroundShape" id="backgroundShape4">
+    <canvas class="noise"></canvas>
+    <div class="backgroundGlass"></div>
+
+    <div id="title">Hello, World!</div>
+    <div id="subTitle">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+
+    <script>
+        // Disable drag/drop images
+        document.getElementById('backgroundShape1').ondragstart = function() { return false; };
+        document.getElementById('backgroundShape2').ondragstart = function() { return false; };
+        document.getElementById('backgroundShape3').ondragstart = function() { return false; };
+        document.getElementById('backgroundShape4').ondragstart = function() { return false; };
+
+        // Background Noise
+        const canvas = document.querySelector('.noise'),
+        ctx = canvas.getContext('2d')
+
+        canvas.width = canvas.height = 128
+
+        resize();
+        window.onresize = resize;
+
+        function resize() {
+            canvas.width = window.innerWidth * window.devicePixelRatio
+            canvas.height = window.innerHeight * window.devicePixelRatio
+            canvas.style.width = window.innerWidth + 'px'
+            canvas.style.height = window.innerHeight + 'px'
+        }
+
+        function noise(ctx) {
+            
+            const w = ctx.canvas.width,
+                        h = ctx.canvas.height,
+                        iData = ctx.createImageData(w, h),
+                        buffer32 = new Uint32Array(iData.data.buffer),
+                        len = buffer32.length
+            let i = 0
+
+            for(; i < len;i++)
+                
+                if (Math.random() < 0.5) buffer32[i] = 0xffffffff;
+
+                ctx.putImageData(iData, 0, 0);
+        }
+
+        (function loop() {
+            noise(ctx);
+            requestAnimationFrame(loop);
+        })();
+    </script>
+</body>
+</html>
