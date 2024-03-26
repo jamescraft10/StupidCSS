@@ -199,7 +199,7 @@
         document.getElementById('backgroundShape3').ondragstart = function() { return false; };
         document.getElementById('backgroundShape4').ondragstart = function() { return false; };
 
-        const cards = document.querySelectorAll('cardImg');
+        const cards = document.querySelectorAll('.cardImg');
         for(let i = 0; i < cards.length; ++i) {
             cards[i].ondragstart = function() { return false; };
         }
