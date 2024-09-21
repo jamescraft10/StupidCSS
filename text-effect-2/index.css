@@ -1,0 +1,82 @@
+:root {
+    --background-color: #0A0A0A;
+    --main-text-color: #F0F0F0;
+    --main-text-font-size: 2em;
+    --stroke-width: calc(1em / 16);
+    --letter-spacing: calc(1em / 16);
+    --font-weight: 900;
+}
+
+html, body, main {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+main {
+    background-color: var(--background-color);
+    color: var(--main-text-color);
+
+    font-size: xx-large;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: var(--font-weight); /* 100-900 */
+    font-style: normal;
+    font-variation-settings: "slnt" 0;
+    line-height: 1;
+}
+
+main > #text {
+    position: absolute;
+    margin-left: 10vw;
+    margin-top: 10vh;
+    width: 50vw;
+    height: 50vh;
+}
+
+main > #text > .mainText {
+    margin: 0;
+    font-size: var(--main-text-font-size);
+}
+
+@property --main-text-graident-deg {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* todo glow */
+main > #text > .mainText > #textChange {
+    background-clip: text;
+    background-image: linear-gradient(var(--main-text-graident-deg), #09f1b8, #00a2ff, #ff00d2, #fed90f);
+    color: var(--background-color);
+    font-weight: var(--font-weight);
+    letter-spacing: var(--letter-spacing);
+    padding: calc(--stroke-width / 2);
+    -webkit-text-stroke-color: transparent;
+    -webkit-text-stroke-width: var(--stroke-width);
+    animation: 3s text-change-spin linear infinite;
+}
+
+@keyframes text-change-spin {
+    from {
+        --main-text-graident-deg: 0deg;
+    }
+    to {
+        --main-text-graident-deg: 360deg;
+    }
+}
+
+main > #text > .subText {
+    line-height: -0.5;
+    font-size: large;
+    font-weight: 500;
+    color: rgb(50, 50, 50);
+}
+
+#githubA {
+    color: rgb(60, 60, 60);
+    text-decoration: none;
+    font-size: large;
+}
